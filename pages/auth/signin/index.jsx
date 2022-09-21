@@ -1,20 +1,21 @@
-import { useState } from 'react'
+import Link from 'next/link';
+import { useState } from 'react';
 const Signin = () => {
 	const [value, setValue] = useState({
 		email: '',
 		password: '',
-	})
+	});
 
 	const handleChange = (e) => {
 		setValue({
 			...value,
 			[e.target.name]: e.target.value,
-		})
-	}
+		});
+	};
 	const handleSubmit = (e) => {
-		e.preventDefault()
-		console.log(value)
-	}
+		e.preventDefault();
+		console.log('value: ', value);
+	};
 	return (
 		<section className='login-page section-b-space'>
 			<div className='container'>
@@ -50,9 +51,16 @@ const Signin = () => {
 										required
 									/>
 								</div>
-								<a href='#' className='btn btn-solid'>
-									Login
-								</a>
+								<div>
+									<Link href='/auth/forgot'>
+										<a>Forgot password?</a>
+									</Link>
+								</div>
+								<input
+									type='submit'
+									className='btn btn-solid mt-3'
+									value='Login'
+								/>
 							</form>
 						</div>
 					</div>
@@ -65,15 +73,15 @@ const Signin = () => {
 								and easy. It allows you to be able to order from our shop. To
 								start shopping click register.
 							</p>
-							<a href='#' className='btn btn-solid'>
-								Create an Account
-							</a>
+							<Link href='/auth/signup'>
+								<a className='btn btn-solid'>Create an Account</a>
+							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default Signin
+export default Signin;

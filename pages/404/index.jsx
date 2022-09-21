@@ -1,6 +1,7 @@
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
-const notFoundPage = () => {
+const Page404 = () => {
 	return (
 		<>
 			<section className='p-0'>
@@ -10,15 +11,15 @@ const notFoundPage = () => {
 							<div className='error-section'>
 								<h1>404</h1>
 								<h2>page not found</h2>
-								<a href='index.html' className='btn btn-solid'>
-									back to home
-								</a>
+								<Link href='/'>
+									<a className='btn btn-solid'>back to home</a>
+								</Link>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 		</>
-	)
-}
-export default notFoundPage
+	);
+};
+export default Page404;

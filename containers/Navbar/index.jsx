@@ -17,12 +17,14 @@ const Navbar = () => {
 								</ul>
 							</div>
 						</div>
-						<div className='col-lg-6 text-end'>
+						<div className='col-lg-6 text-end d-flex justify-content-end'>
 							<ul className='header-dropdown'>
 								<li className='mobile-wishlist'>
-									<a href='#'>
-										<i className='fa fa-heart' aria-hidden='true' />
-									</a>
+									<Link href='/user/wishlist'>
+										<a>
+											<i className='fa fa-heart' aria-hidden='true' />
+										</a>
+									</Link>
 								</li>
 								<li className='onhover-dropdown mobile-account'>
 									{' '}
@@ -30,10 +32,14 @@ const Navbar = () => {
 									My Account
 									<ul className='onhover-show-div'>
 										<li>
-											<a href='login.html'>Login</a>
+											<Link href='/auth/signin'>
+												<a>Login</a>
+											</Link>
 										</li>
 										<li>
-											<a href='register.html'>register</a>
+											<Link href='/auth/signup'>
+												<a>register</a>
+											</Link>
 										</li>
 									</ul>
 								</li>

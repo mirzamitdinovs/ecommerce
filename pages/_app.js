@@ -1,9 +1,10 @@
+import Footer from 'containers/Footer';
+import Navbar from 'containers/Navbar';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useEffect } from 'react';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import '../styles/globals.css';
-import Navbar from 'containers/Navbar';
-import Footer from 'containers/Footer';
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -37,7 +38,7 @@ function MyApp({ Component, pageProps }) {
 				<link
 					rel='stylesheet'
 					type='text/css'
-					href='../assets/css/vendors/fontawesome.css'
+					href='../assets/css/fontawesome.css'
 				/>
 				<link
 					rel='stylesheet'
@@ -50,24 +51,7 @@ function MyApp({ Component, pageProps }) {
 				<link
 					rel='stylesheet'
 					type='text/css'
-					href='../assets/css/vendors/slick.css'
-				/>
-				<link
-					rel='stylesheet'
-					type='text/css'
-					href='../assets/css/vendors/slick-theme.css'
-				/>
-
-				<link
-					rel='stylesheet'
-					type='text/css'
-					href='../assets/css/vendors/animate.css'
-				/>
-
-				<link
-					rel='stylesheet'
-					type='text/css'
-					href='../assets/css/vendors/themify-icons.css'
+					href='../assets/css/themify-icons.css'
 				/>
 				<link
 					rel='stylesheet'
@@ -77,7 +61,7 @@ function MyApp({ Component, pageProps }) {
 				<link
 					rel='stylesheet'
 					type='text/css'
-					href='../assets/css/vendors/bootstrap.css'
+					href='../assets/css/bootstrap.css'
 				/>
 
 				<link rel='stylesheet' type='text/css' href='../assets/css/style.css' />
@@ -93,46 +77,29 @@ function MyApp({ Component, pageProps }) {
 				<Footer />
 			</div>
 
-			<Script
-				strategy='afterInteractive'
-				src='../assets/js/jquery-3.3.1.min.js'
-			></Script>
+			{/* <Script strategy='afterInteractive' src='../assets/js/menu.js'></Script> */}
 
 			<Script
-				strategy='afterInteractive'
-				src='../assets/js/jquery-ui.min.js'
-			></Script>
-
-			<Script
-				strategy='afterInteractive'
-				src='../assets/js/jquery.exitintent.js'
-			></Script>
-
-			<Script strategy='afterInteractive' src='../assets/js/slick.js'></Script>
-
-			<Script strategy='afterInteractive' src='../assets/js/menu.js'></Script>
-
-			<Script
-				strategy='afterInteractive'
+				strategy='beforeInteractive'
 				src='../assets/js/lazysizes.min.js'
 			></Script>
 
 			<Script
-				strategy='afterInteractive'
+				strategy='beforeInteractive'
 				src='../assets/js/bootstrap.bundle.min.js'
 			></Script>
 
-			<Script
+			{/* <Script
 				strategy='afterInteractive'
 				src='../assets/js/bootstrap-notify.min.js'
-			></Script>
+			></Script> */}
 
-			<Script
+			{/* <Script
 				strategy='afterInteractive'
 				src='../assets/js/fly-cart.js'
-			></Script>
+			></Script> */}
 
-			<Script strategy='afterInteractive' src='../assets/js/script.js'></Script>
+			{/* <Script strategy='afterInteractive' src='../assets/js/script.js'></Script> */}
 		</>
 	);
 }
