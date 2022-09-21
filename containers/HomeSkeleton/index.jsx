@@ -104,11 +104,10 @@ const HomeSkeleton = () => {
 													<div>
 														<img
 															src='../assets/images/icon/search.png'
-															onclick='openSearch()'
 															className='img-fluid blur-up lazyload'
 															alt=''
 														/>{' '}
-														<i className='ti-search' onclick='openSearch()' />
+														<i className='ti-search' />
 													</div>
 												</li>
 												<li className='onhover-div mobile-setting'>

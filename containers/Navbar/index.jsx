@@ -54,7 +54,7 @@ const Navbar = () => {
 						<div className='main-menu'>
 							<div className='menu-left'>
 								<div className='navbar'>
-									<a href='javascript:void(0)' onclick='openNav()'>
+									<a href='javascript:void(0)' onClick='openNav()'>
 										<div className='bar-style'>
 											<i
 												className='fa fa-bars sidebar-bar'
@@ -66,10 +66,10 @@ const Navbar = () => {
 										<a
 											href='javascript:void(0)'
 											className='sidebar-overlay'
-											onclick='closeNav()'
+											onClick='closeNav()'
 										/>
 										<nav>
-											<div onclick='closeNav()'>
+											<div onClick='closeNav()'>
 												<div className='sidebar-back text-start'>
 													<i
 														className='fa fa-angle-left pe-2'
@@ -152,15 +152,6 @@ const Navbar = () => {
 																			</li>
 																		</ul>
 																	</div>
-																</div>
-																<div className='col-xl-4'>
-																	<a href='#' className='mega-menu-banner'>
-																		<img
-																			src='../assets/images/mega-menu/fashion.jpg'
-																			alt=''
-																			className='img-fluid blur-up lazyload'
-																		/>
-																	</a>
 																</div>
 															</div>
 														</li>
