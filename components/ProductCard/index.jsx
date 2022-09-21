@@ -46,9 +46,6 @@ const ProductCard = ({ item }) => {
 					>
 						<i className='ti-search' aria-hidden='true' />
 					</a>
-					<a href='compare.html' title='Compare'>
-						<i className='ti-reload' aria-hidden='true' />
-					</a>
 				</div>
 			</div>
 			<div className='product-detail'>
