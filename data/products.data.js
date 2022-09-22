@@ -2,7 +2,10 @@ export default [
 	{
 		slug: 'women_pink_shirt',
 		name: 'WOMEN PINK SHIRT',
-		category: 'Women cloths',
+		category: {
+			id: 'women_cloths',
+			name: 'Women cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -53,7 +56,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_1',
 		name: 'WOMEN PINK SHIRT 1',
-		category: 'Women cloths',
+		category: {
+			id: 'women_cloths',
+			name: 'Women cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -104,7 +110,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_2',
 		name: 'WOMEN PINK SHIRT 2',
-		category: 'Mens cloths',
+		category: {
+			id: 'men_cloths',
+			name: 'Mens cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -155,7 +164,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_3',
 		name: 'WOMEN PINK SHIRT 3',
-		category: 'Kids cloths',
+		category: {
+			id: 'kids_cloths',
+			name: 'Kids cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -206,7 +218,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_4',
 		name: 'WOMEN PINK SHIRT 4',
-		category: 'Kids cloths',
+		category: {
+			id: 'kids_cloths',
+			name: 'Kids cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -257,7 +272,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_5',
 		name: 'WOMEN PINK SHIRT 5',
-		category: 'Mens cloths',
+		category: {
+			id: 'men_cloths',
+			name: 'Mens cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -308,7 +326,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_6',
 		name: 'WOMEN PINK SHIRT 6',
-		category: 'Kids cloths',
+		category: {
+			id: 'kids_cloths',
+			name: 'Kids cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -359,7 +380,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_7',
 		name: 'WOMEN PINK SHIRT 7',
-		category: 'Mens cloths',
+		category: {
+			id: 'men_cloths',
+			name: 'Mens cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -410,7 +434,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_8',
 		name: 'WOMEN PINK SHIRT 8',
-		category: 'Mens cloths',
+		category: {
+			id: 'men_cloths',
+			name: 'Mens cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,
@@ -461,7 +488,10 @@ export default [
 	{
 		slug: 'women_pink_shirt_9',
 		name: 'WOMEN PINK SHIRT 9',
-		category: 'Mens cloths',
+		category: {
+			id: 'men_cloths',
+			name: 'Mens cloths',
+		},
 		description:
 			"The Model is wearing a white blouse from our stylist's collection, see the image for a mock-up of what the actual blouse would look like.",
 		price: 459.0,

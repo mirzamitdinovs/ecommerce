@@ -24,7 +24,7 @@ export default function Home() {
 			<ProductSlider data={productsData} />
 
 			<Banner
-				image='../assets/images/parallax/1.jpg'
+				image='../assets/images/1.jpg'
 				topTitle='2022'
 				title='Fashion trends'
 				text='special offer'

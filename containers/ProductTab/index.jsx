@@ -1,13 +1,13 @@
 import ProductCard from 'components/ProductCard';
+import categoryData from 'data/category.data';
 import { useEffect, useState } from 'react';
 
 const ProductTab = ({ data }) => {
 	const [categories, setCategories] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	useEffect(() => {
-		setCategories([...new Set(data.map((item) => item.category))]);
+		setCategories(categoryData);
 	}, []);
-	console.log('categories: ', selectedCategory);
 	return (
 		<section className='section-b-space pt-0 ratio_asos'>
 			<div className='container'>
@@ -31,12 +31,12 @@ const ProductTab = ({ data }) => {
 										<span
 											style={{
 												color:
-													selectedCategory === item ? '#ff4c3b' : '#2d2a25',
+													selectedCategory === item.id ? '#ff4c3b' : '#2d2a25',
 											}}
-											onClick={() => setSelectedCategory(item)}
+											onClick={() => setSelectedCategory(item.id)}
 											role='button'
 										>
-											{item}
+											{item.name}
 										</span>
 									</li>
 								))}
@@ -46,7 +46,7 @@ const ProductTab = ({ data }) => {
 									.filter((item) =>
 										!selectedCategory
 											? item
-											: item.category === selectedCategory
+											: item.category.id === selectedCategory
 									)
 									.map((item, index) => (
 										<ProductCard key={index} item={item} />

@@ -4,8 +4,34 @@ import Pagination from 'components/Pagination';
 import ProductCard from 'components/ProductCard';
 import TopController from 'containers/TopController';
 import productsData from 'data/products.data';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { GET_CATALOG_PRODUCTS } from 'pages/services';
+import ProductsSkeleton from 'containers/ProductsSkeleton';
 
-const ProducsPage = () => {
+const CatalogPage = () => {
+	const [products, setProducts] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const router = useRouter();
+
+	useEffect(() => {
+		getProducts(router.query.category_id);
+	}, [router]);
+
+	const getProducts = async (id) => {
+		if (!loading) {
+			setLoading(true);
+		}
+		const res = await GET_CATALOG_PRODUCTS(id);
+		if (res) {
+			setProducts(res);
+			setLoading(false);
+		}
+	};
+
+	console.log('products: ', products);
+
+	if (loading) return <ProductsSkeleton />;
 	return (
 		<>
 			<div>
@@ -20,10 +46,10 @@ const ProducsPage = () => {
 										<div className='row'>
 											<div className='col-sm-12'>
 												<div className='collection-product-wrapper'>
-													<TopController />
+													{/* <TopController /> */}
 													<div className='product-wrapper-grid'>
 														<div className='row margin-res'>
-															{productsData.map((item, index) => (
+															{products.map((item, index) => (
 																<div
 																	key={index}
 																	className='col-xl-3 col-6 col-grid-box'
@@ -33,7 +59,7 @@ const ProducsPage = () => {
 															))}
 														</div>
 													</div>
-													<Pagination />
+													{/* <Pagination /> */}
 												</div>
 											</div>
 										</div>
@@ -48,4 +74,4 @@ const ProducsPage = () => {
 	);
 };
 
-export default ProducsPage;
+export default CatalogPage;

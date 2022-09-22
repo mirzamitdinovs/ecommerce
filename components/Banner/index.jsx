@@ -1,8 +1,12 @@
 const Banner = ({ image, topTitle, title, text }) => {
 	return (
 		<section className='p-0'>
-			<div className='full-banner parallax text-center p-left'>
-				<img src={image} alt='' className='bg-img blur-up lazyload' />
+			<div
+				style={{
+					backgroundImage: `url(${image})`,
+				}}
+				className='full-banner parallax text-center p-left'
+			>
 				<div className='container'>
 					<div className='row'>
 						<div className='col'>
