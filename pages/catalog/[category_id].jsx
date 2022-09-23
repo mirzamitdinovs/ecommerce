@@ -8,15 +8,16 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { GET_CATALOG_PRODUCTS } from 'pages/services';
 import ProductsSkeleton from 'containers/ProductsSkeleton';
+import QuickView from 'components/QuickView';
 
 const CatalogPage = () => {
 	const [products, setProducts] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const router = useRouter();
 
-	useEffect(() => {
-		getProducts(router.query.category_id);
-	}, [router]);
+	// useEffect(() => {
+	// 	getProducts(router.query.category_id);
+	// }, [router]);
 
 	const getProducts = async (id) => {
 		if (!loading) {

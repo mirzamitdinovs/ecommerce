@@ -1,6 +1,10 @@
 import CategorySidebar from 'containers/CategorySidebar';
+import CartContext from 'contexts/CartContext';
 import Link from 'next/link';
+import { useContext } from 'react';
 const Navbar = () => {
+	const { cart, removeCartProduct, getTotalAmount, getTotalPrice } =
+		useContext(CartContext);
 	function openNav() {
 		document.getElementById('mySidenav').classList.add('open-side');
 	}
@@ -86,7 +90,7 @@ const Navbar = () => {
 								<div>
 									<div className='icon-nav'>
 										<ul>
-											<li
+											{/* <li
 												style={{
 													width: '700px',
 												}}
@@ -106,7 +110,7 @@ const Navbar = () => {
 														</form>
 													</div>
 												</div>
-											</li>
+											</li> */}
 											<li className='onhover-div mobile-setting'>
 												<div>
 													<img
@@ -152,60 +156,41 @@ const Navbar = () => {
 													/>{' '}
 													<i className='ti-shopping-cart' />
 												</div>
-												<span className='cart_qty_cls'>2</span>
+												<span className='cart_qty_cls'>{getTotalAmount()}</span>
 												<ul className='show-div shopping-cart'>
-													<li>
-														<div className='media'>
-															<a href='#'>
-																<img
-																	alt=''
-																	className='me-3'
-																	src='../assets/images/fashion/product/1.jpg'
-																/>
-															</a>
-															<div className='media-body'>
-																<a href='#'>
-																	<h4>item name</h4>
-																</a>
-																<h4>
-																	<span>1 x $ 299.00</span>
-																</h4>
+													{cart.map((item, index) => (
+														<li key={index}>
+															<div className='media'>
+																<div>
+																	<img
+																		alt=''
+																		className='me-3'
+																		src={item.image}
+																	/>
+																</div>
+																<div className='media-body'>
+																	<h4>{item.name}</h4>
+
+																	<h4>
+																		<span>
+																			{item.qty} x $ {item.price}
+																		</span>
+																	</h4>
+																</div>
 															</div>
-														</div>
-														<div className='close-circle'>
-															<a href='#'>
+															<div
+																className='close-circle'
+																onClick={() => removeCartProduct(item.slug)}
+															>
 																<i className='fa fa-times' aria-hidden='true' />
-															</a>
-														</div>
-													</li>
-													<li>
-														<div className='media'>
-															<a href='#'>
-																<img
-																	alt=''
-																	className='me-3'
-																	src='../assets/images/fashion/product/2.jpg'
-																/>
-															</a>
-															<div className='media-body'>
-																<a href='#'>
-																	<h4>item name</h4>
-																</a>
-																<h4>
-																	<span>1 x $ 299.00</span>
-																</h4>
 															</div>
-														</div>
-														<div className='close-circle'>
-															<a href='#'>
-																<i className='fa fa-times' aria-hidden='true' />
-															</a>
-														</div>
-													</li>
+														</li>
+													))}
+
 													<li>
 														<div className='total'>
 															<h5>
-																subtotal : <span>$299.00</span>
+																subtotal : <span>${getTotalPrice()}</span>
 															</h5>
 														</div>
 													</li>

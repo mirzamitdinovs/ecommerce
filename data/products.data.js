@@ -16,7 +16,7 @@ export default [
 			'http://themes.pixelstrap.com/multikart/assets/images/pro3/28.jpg',
 			'http://themes.pixelstrap.com/multikart/assets/images/pro3/35.jpg',
 		],
-		colors: ['red', 'yellow', 'blue'],
+		colors: ['orange', 'green', 'blue'],
 		sizes: ['xl', 'lg', 'm', 'sm', 'xs'],
 		details: `<div class="product-tab-discription">
     <div class="part">

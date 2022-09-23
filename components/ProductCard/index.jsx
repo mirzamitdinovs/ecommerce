@@ -2,9 +2,10 @@ import { PARSE_PRICE } from 'helpers';
 import ReactStars from 'react-stars';
 import Link from 'next/link';
 import QuickView from 'components/QuickView';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import QuickViewContext from 'contexts/QuickViewContext';
 const ProductCard = ({ item }) => {
-	const [toggleQuickView, setToggleQueickView] = useState(false);
+	const { openQuickView } = useContext(QuickViewContext);
 	return (
 		<>
 			<div className='product-box px-2'>
@@ -32,20 +33,17 @@ const ProductCard = ({ item }) => {
 						</Link>
 					</div>
 					<div className='cart-info cart-wrap'>
-						<button
+						{/* <button
 							data-bs-toggle='modal'
 							data-bs-target='#addtocart'
 							title='Add to cart'
 						>
 							<i className='ti-shopping-cart' />
-						</button>
+						</button> */}
 						<a href='javascript:void(0)' title='Add to Wishlist'>
 							<i className='ti-heart' aria-hidden='true' />
 						</a>
-						<button
-							onClick={() => setToggleQueickView(true)}
-							title='Quick View'
-						>
+						<button onClick={() => openQuickView(item)} title='Quick View'>
 							<i className='ti-search' aria-hidden='true' />
 						</button>
 					</div>
@@ -67,16 +65,17 @@ const ProductCard = ({ item }) => {
 					</Link>
 					<h4>${PARSE_PRICE(item.price, item.sales)}</h4>
 					<ul className='color-variant'>
-						<li className='bg-light0' />
-						<li className='bg-light1' />
-						<li className='bg-light2' />
+						{item.colors?.map((color, index) => (
+							<li
+								key={index}
+								style={{
+									background: color,
+								}}
+							/>
+						))}
 					</ul>
 				</div>
 			</div>
-			<QuickView
-				toggleQuickView={toggleQuickView}
-				close={() => setToggleQueickView(false)}
-			/>
 		</>
 	);
 };

@@ -1,5 +1,9 @@
+import QuickView from 'components/QuickView';
 import Footer from 'containers/Footer';
+import Layout from 'containers/Layout';
 import Navbar from 'containers/Navbar';
+import { CartProvider } from 'contexts/CartContext';
+import { QuickViewProvider } from 'contexts/QuickViewContext';
 import Head from 'next/head';
 import Script from 'next/script';
 import 'slick-carousel/slick/slick-theme.css';
@@ -17,18 +21,14 @@ function MyApp({ Component, pageProps }) {
 				<meta name='keywords' content='multikart' />
 				<meta name='author' content='multikart' />
 			</Head>
-			<div
-				className='theme-color-1'
-				style={{
-					overflow: 'hidden',
-				}}
-			>
-				<Navbar />
-				<Component {...pageProps} />
-				<Footer />
-			</div>
 
-			{/* <Script strategy='afterInteractive' src='../assets/js/menu.js'></Script> */}
+			<CartProvider>
+				<QuickViewProvider>
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</QuickViewProvider>
+			</CartProvider>
 
 			<Script
 				strategy='beforeInteractive'
@@ -39,18 +39,6 @@ function MyApp({ Component, pageProps }) {
 				strategy='lazyOnload'
 				src='assets/js/bootstrap.bundle.min.js'
 			></Script>
-
-			{/* <Script
-				strategy='afterInteractive'
-				src='../assets/js/bootstrap-notify.min.js'
-			></Script> */}
-
-			{/* <Script
-				strategy='afterInteractive'
-				src='../assets/js/fly-cart.js'
-			></Script> */}
-
-			{/* <Script strategy='afterInteractive' src='../assets/js/script.js'></Script> */}
 		</>
 	);
 }
